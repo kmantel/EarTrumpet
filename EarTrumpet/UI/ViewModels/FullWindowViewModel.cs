@@ -8,7 +8,7 @@ namespace EarTrumpet.UI.ViewModels
 {
     public class FullWindowViewModel : BindableBase, IPopupHostViewModel
     {
-        public static readonly int SmallDeviceCountLimit = 3;
+        public static readonly int SmallDeviceCountLimit = 4;
 
         public ObservableCollection<DeviceViewModel> AllDevices => _mainViewModel.AllDevices;
         public ModalDialogViewModel Dialog { get; }
