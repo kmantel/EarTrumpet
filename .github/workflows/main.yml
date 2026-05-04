@@ -27,7 +27,7 @@ env:
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: windows-2022
     strategy:
       matrix:
         channel: [AppInstaller, Store, Chocolatey]
@@ -246,7 +246,7 @@ jobs:
           path: artifacts/chocolatey
   release:
     needs: build
-    runs-on: windows-2019
+    runs-on: windows-2022
     if: github.event_name != 'pull_request'
     strategy:
       matrix:
