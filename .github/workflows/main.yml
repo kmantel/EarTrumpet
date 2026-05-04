@@ -43,7 +43,7 @@ jobs:
       max-parallel: 3
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Fetch all history for all tags and branches
         run: git fetch --prune --unshallow
@@ -145,7 +145,7 @@ jobs:
 
       - name: Upload appxupload artifact
         if: matrix.channel == 'Store' && github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: appxupload
           path: artifacts/appxupload
@@ -161,7 +161,7 @@ jobs:
       - name: Upload loose artifacts
         if:
           matrix.channel == 'Chocolatey' && github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: loose
           path: artifacts/loose
@@ -201,7 +201,7 @@ jobs:
         if:
           matrix.channel == 'AppInstaller' && github.event_name !=
           'pull_request'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sideload
           path: artifacts/sideload
@@ -227,7 +227,7 @@ jobs:
           Copy-Item packaging\ -Recurse "$env:ARTIFACTS_BASE\metadata\"
 
       - name: Upload metadata artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: metadata
           path: artifacts/metadata
@@ -240,7 +240,7 @@ jobs:
           Copy-Item .chocolatey\* -Recurse "$env:ARTIFACTS_BASE\chocolatey\"
 
       - name: Upload chocolatey artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: chocolatey
           path: artifacts/chocolatey
@@ -258,7 +258,7 @@ jobs:
       AZURE_CLIENT_SECRET: ${{ secrets.azure_client_secret }}
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
 
@@ -410,7 +410,7 @@ jobs:
 
       - name: Upload chocolatey artifact
         if: matrix.channel == 'Chocolatey'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: chocolatey-package
           path: artifacts/chocolatey/*.nupkg
