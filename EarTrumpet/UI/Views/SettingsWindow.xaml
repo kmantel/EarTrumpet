@@ -531,7 +531,7 @@
                         <Style.Triggers>
                             <MultiDataTrigger>
                                 <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding Source={StaticResource ThemeManager}, Path=AnimationsEnabled}" Value="True" />
+                                    <Condition Binding="{Binding Source={StaticResource ThemeManager}, Path=AnimationsEnabled}" Value="False" />
                                     <Condition Binding="{Binding ElementName=WindowRoot, Path=IsActive}" Value="True" />
                                 </MultiDataTrigger.Conditions>
                                 <MultiDataTrigger.EnterActions>

@@ -20,7 +20,7 @@ namespace EarTrumpet.UI.Themes
 
         public List<Ref> References { get; }
 
-        private bool? lastAnimationsEnabledValue = null;
+        private bool? lastAnimationsEnabledValue = false;
         public bool AnimationsEnabled {
             get
             {
